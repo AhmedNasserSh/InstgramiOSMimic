@@ -53,30 +53,3 @@ final class CoreDataManager: NSObject {
         return container
     }()
 }
-
-extension CoreDataManager {
-    
-    func fetchEntity<OutPut>(entity: Entity,
-                             predicate: NSPredicate?,
-                             mapper: ([NSManagedObject]) -> [OutPut]?) -> [OutPut]? {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entity.rawValue)
-        do {
-            let object = try privateContext.fetch(fetchRequest)
-            return mapper(object)
-        } catch {
-            let coreDataError = error as NSError
-            fatalError("Unresolved error \(coreDataError), \(coreDataError.userInfo)")
-        }
-    }
-    
-    func saveContext() {
-        if privateContext.hasChanges {
-            do {
-                try privateContext.save()
-            } catch {
-                let coreDataError = error as NSError
-                fatalError("Unresolved error \(coreDataError), \(coreDataError.userInfo)")
-            }
-        }
-    }
-}

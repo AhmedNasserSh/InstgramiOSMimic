@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="373" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="InstgramiOSMimic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="373"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="373"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfJ-hg-j0Y">
+                        <rect key="frame" x="8" y="8" width="284" height="322"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-Tv-PTI">
+                        <rect key="frame" x="8" y="338" width="284" height="25"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK6-jy-fo5">
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="6pz-AI-R6a"/>
+                                    <constraint firstAttribute="width" constant="25" id="vXS-GV-5J3"/>
+                                </constraints>
+                                <state key="normal" image="heart"/>
+                                <connections>
+                                    <action selector="didTabLike:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mFN-P4-dkR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO9-0c-HgQ">
+                                <rect key="frame" x="33" y="2.5" width="218" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPt-uo-hNf">
+                                <rect key="frame" x="259" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="7kG-Ip-oGp"/>
+                                    <constraint firstAttribute="width" constant="25" id="zOF-Bp-GeN"/>
+                                </constraints>
+                                <state key="normal" image="share"/>
+                                <connections>
+                                    <action selector="didTabShare:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lLC-en-302"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9oC-Tv-PTI" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="NYf-6U-axI"/>
+                    <constraint firstItem="9oC-Tv-PTI" firstAttribute="top" secondItem="vfJ-hg-j0Y" secondAttribute="bottom" constant="8" id="O9b-MB-xZD"/>
+                    <constraint firstItem="vfJ-hg-j0Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="UG1-M3-oJJ"/>
+                    <constraint firstAttribute="trailing" secondItem="vfJ-hg-j0Y" secondAttribute="trailing" constant="8" id="cGY-Fq-a2l"/>
+                    <constraint firstItem="vfJ-hg-j0Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fs1-hY-E7l"/>
+                    <constraint firstAttribute="bottom" secondItem="9oC-Tv-PTI" secondAttribute="bottom" constant="10" id="kUu-2N-IoS"/>
+                    <constraint firstItem="9oC-Tv-PTI" firstAttribute="width" secondItem="vfJ-hg-j0Y" secondAttribute="width" id="yFf-ab-pVH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="likeButton" destination="UK6-jy-fo5" id="UR9-X4-8W8"/>
+                <outlet property="postImageView" destination="vfJ-hg-j0Y" id="z7D-ZV-neb"/>
+            </connections>
+            <point key="canvasLocation" x="251" y="150"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart" width="512" height="512"/>
+        <image name="share" width="512" height="512"/>
+    </resources>
+</document>

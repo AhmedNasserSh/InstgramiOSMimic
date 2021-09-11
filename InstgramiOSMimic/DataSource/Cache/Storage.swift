@@ -6,9 +6,8 @@
 //
 
 import Foundation
-protocol Storage {
-    associatedtype ModelType
-    
-    func save(input: ModelType)
-    func fetch() -> [ModelType]?
+protocol Storage: AnyObject {
+    associatedtype Input
+    func save<Model>(mapper: (Model) -> Model?) where Model == Input
+    func fetch<Output>(type: String, mapper: ([Input]) -> [Output]?) -> [Output]?
 }
