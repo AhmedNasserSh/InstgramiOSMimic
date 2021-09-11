@@ -1,11 +1,11 @@
 //
-//  FeedInteractor.swift
+//  DataSourceType.swift
 //  InstgramiOSMimic
 //
 //  Created by Ahmed Naser on 11/09/2021.
 //
 
 import Foundation
-struct FeedInteractor {
-    
+enum DataSourceType {
+    case network, cache
 }

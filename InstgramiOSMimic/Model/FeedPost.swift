@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+struct Feed: Codable {
+    let posts: [FeedPost]
+}
+
 struct FeedPost: Codable {
     let imageURL: URL
     let liked: Bool

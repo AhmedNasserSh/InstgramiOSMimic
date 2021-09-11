@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4E51B56626ED36980063CB2A /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B56526ED36980063CB2A /* CoreDataStore.swift */; };
+		4E51B56826ED3C910063CB2A /* FeedScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B56726ED3C910063CB2A /* FeedScenePresenter.swift */; };
+		4E51B56D26ED3D360063CB2A /* FeedSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B56C26ED3D360063CB2A /* FeedSceneWorker.swift */; };
+		4E51B56F26ED3EDF0063CB2A /* DataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B56E26ED3EDF0063CB2A /* DataSourceType.swift */; };
+		4E51B57126ED3F2E0063CB2A /* FeedPostNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B57026ED3F2E0063CB2A /* FeedPostNetworkService.swift */; };
+		4E51B57426ED44200063CB2A /* FeedSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B57326ED44200063CB2A /* FeedSceneConfigurator.swift */; };
 		4EA3E0D326ECD603004B9CD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E0D226ECD603004B9CD6 /* AppDelegate.swift */; };
 		4EA3E0D526ECD603004B9CD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E0D426ECD603004B9CD6 /* SceneDelegate.swift */; };
 		4EA3E0DD26ECD603004B9CD6 /* InstgramiOSMimic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E0DB26ECD603004B9CD6 /* InstgramiOSMimic.xcdatamodeld */; };
@@ -27,7 +32,7 @@
 		4EA3E12626ECFC9F004B9CD6 /* FeedSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA3E12426ECFC9F004B9CD6 /* FeedSceneViewController.xib */; };
 		4EA3E12A26ECFCC9004B9CD6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E12826ECFCC9004B9CD6 /* PostTableViewCell.swift */; };
 		4EA3E12B26ECFCC9004B9CD6 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA3E12926ECFCC9004B9CD6 /* PostTableViewCell.xib */; };
-		4EA3E12D26ECFF5A004B9CD6 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E12C26ECFF5A004B9CD6 /* FeedInteractor.swift */; };
+		4EA3E12D26ECFF5A004B9CD6 /* FeedSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E12C26ECFF5A004B9CD6 /* FeedSceneInteractor.swift */; };
 		4EA3E12F26ECFF8D004B9CD6 /* FeedSceneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E12E26ECFF8D004B9CD6 /* FeedSceneProtocols.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +55,11 @@
 
 /* Begin PBXFileReference section */
 		4E51B56526ED36980063CB2A /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		4E51B56726ED3C910063CB2A /* FeedScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScenePresenter.swift; sourceTree = "<group>"; };
+		4E51B56C26ED3D360063CB2A /* FeedSceneWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneWorker.swift; sourceTree = "<group>"; };
+		4E51B56E26ED3EDF0063CB2A /* DataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceType.swift; sourceTree = "<group>"; };
+		4E51B57026ED3F2E0063CB2A /* FeedPostNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostNetworkService.swift; sourceTree = "<group>"; };
+		4E51B57326ED44200063CB2A /* FeedSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneConfigurator.swift; sourceTree = "<group>"; };
 		4EA3E0CF26ECD603004B9CD6 /* InstgramiOSMimic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstgramiOSMimic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA3E0D226ECD603004B9CD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA3E0D426ECD603004B9CD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +85,7 @@
 		4EA3E12426ECFC9F004B9CD6 /* FeedSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedSceneViewController.xib; sourceTree = "<group>"; };
 		4EA3E12826ECFCC9004B9CD6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		4EA3E12926ECFCC9004B9CD6 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
-		4EA3E12C26ECFF5A004B9CD6 /* FeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
+		4EA3E12C26ECFF5A004B9CD6 /* FeedSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneInteractor.swift; sourceTree = "<group>"; };
 		4EA3E12E26ECFF8D004B9CD6 /* FeedSceneProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +114,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E51B56926ED3CD80063CB2A /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				4E51B56C26ED3D360063CB2A /* FeedSceneWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		4E51B56A26ED3CEE0063CB2A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4E51B56B26ED3D010063CB2A /* FeedPost */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4E51B56B26ED3D010063CB2A /* FeedPost */ = {
+			isa = PBXGroup;
+			children = (
+				4EA3E11A26ECE419004B9CD6 /* FeedPostCacheService.swift */,
+				4E51B57026ED3F2E0063CB2A /* FeedPostNetworkService.swift */,
+			);
+			path = FeedPost;
+			sourceTree = "<group>";
+		};
 		4EA3E0C626ECD603004B9CD6 = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +162,10 @@
 		4EA3E0D126ECD603004B9CD6 /* InstgramiOSMimic */ = {
 			isa = PBXGroup;
 			children = (
-				4EA3E11D26ECFC21004B9CD6 /* Modules */,
 				4EA3E11C26ECFC07004B9CD6 /* Main */,
+				4EA3E11D26ECFC21004B9CD6 /* Modules */,
 				4EA3E10E26ECDDFB004B9CD6 /* Model */,
+				4E51B56A26ED3CEE0063CB2A /* Service */,
 				4EA3E10526ECD77C004B9CD6 /* DataSource */,
 				4EA3E0DE26ECD605004B9CD6 /* Assets.xcassets */,
 				4EA3E0E026ECD605004B9CD6 /* LaunchScreen.storyboard */,
@@ -162,6 +198,7 @@
 			children = (
 				4EA3E11626ECE174004B9CD6 /* Cache */,
 				4EA3E10626ECD792004B9CD6 /* Network */,
+				4E51B56E26ED3EDF0063CB2A /* DataSourceType.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -180,7 +217,6 @@
 		4EA3E10726ECD7A6004B9CD6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				4EA3E11926ECE401004B9CD6 /* CacheService */,
 				4EA3E11426ECE16B004B9CD6 /* CoreDataManger.swift */,
 				4E51B56526ED36980063CB2A /* CoreDataStore.swift */,
 			);
@@ -204,14 +240,6 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
-		4EA3E11926ECE401004B9CD6 /* CacheService */ = {
-			isa = PBXGroup;
-			children = (
-				4EA3E11A26ECE419004B9CD6 /* FeedPostCacheService.swift */,
-			);
-			path = CacheService;
-			sourceTree = "<group>";
-		};
 		4EA3E11C26ECFC07004B9CD6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,11 +260,14 @@
 		4EA3E11E26ECFC28004B9CD6 /* FeedScene */ = {
 			isa = PBXGroup;
 			children = (
+				4E51B56926ED3CD80063CB2A /* Worker */,
 				4EA3E12726ECFCB6004B9CD6 /* Cell */,
 				4EA3E12326ECFC9F004B9CD6 /* FeedSceneViewController.swift */,
 				4EA3E12426ECFC9F004B9CD6 /* FeedSceneViewController.xib */,
-				4EA3E12C26ECFF5A004B9CD6 /* FeedInteractor.swift */,
+				4EA3E12C26ECFF5A004B9CD6 /* FeedSceneInteractor.swift */,
+				4E51B56726ED3C910063CB2A /* FeedScenePresenter.swift */,
 				4EA3E12E26ECFF8D004B9CD6 /* FeedSceneProtocols.swift */,
+				4E51B57326ED44200063CB2A /* FeedSceneConfigurator.swift */,
 			);
 			path = FeedScene;
 			sourceTree = "<group>";
@@ -381,22 +412,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E51B57126ED3F2E0063CB2A /* FeedPostNetworkService.swift in Sources */,
+				4E51B56D26ED3D360063CB2A /* FeedSceneWorker.swift in Sources */,
 				4EA3E11526ECE16B004B9CD6 /* CoreDataManger.swift in Sources */,
 				4EA3E0DD26ECD603004B9CD6 /* InstgramiOSMimic.xcdatamodeld in Sources */,
+				4E51B57426ED44200063CB2A /* FeedSceneConfigurator.swift in Sources */,
 				4EA3E10D26ECDCA7004B9CD6 /* NetworkError.swift in Sources */,
 				4EA3E11826ECE25F004B9CD6 /* Storage.swift in Sources */,
+				4E51B56F26ED3EDF0063CB2A /* DataSourceType.swift in Sources */,
 				4EA3E10926ECD7F2004B9CD6 /* Request.swift in Sources */,
 				4EA3E11B26ECE419004B9CD6 /* FeedPostCacheService.swift in Sources */,
 				4EA3E11026ECDE14004B9CD6 /* FeedPost.swift in Sources */,
 				4EA3E12A26ECFCC9004B9CD6 /* PostTableViewCell.swift in Sources */,
 				4EA3E0D326ECD603004B9CD6 /* AppDelegate.swift in Sources */,
 				4EA3E0D526ECD603004B9CD6 /* SceneDelegate.swift in Sources */,
-				4EA3E12D26ECFF5A004B9CD6 /* FeedInteractor.swift in Sources */,
+				4EA3E12D26ECFF5A004B9CD6 /* FeedSceneInteractor.swift in Sources */,
 				4EA3E11326ECDF0E004B9CD6 /* ImageDownloader.swift in Sources */,
 				4EA3E12F26ECFF8D004B9CD6 /* FeedSceneProtocols.swift in Sources */,
 				4EA3E12526ECFC9F004B9CD6 /* FeedSceneViewController.swift in Sources */,
 				4E51B56626ED36980063CB2A /* CoreDataStore.swift in Sources */,
 				4EA3E10B26ECD879004B9CD6 /* NetworkClient.swift in Sources */,
+				4E51B56826ED3C910063CB2A /* FeedScenePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
