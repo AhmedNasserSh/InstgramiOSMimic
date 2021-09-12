@@ -38,19 +38,10 @@ extension FeedSceneViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.configure(model: posts[indexPath.row])
         return cell!
     }
-}
-
-extension FeedSceneViewController: UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-
-    }
     
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            self.interactor?.cancelDownload(index: indexPath.row)
-        }
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        self.interactor?.cancelDownload(index: indexPath?.row)
     }
-    
 }
 
 extension FeedSceneViewController: FeedSceneViewProtocol {
