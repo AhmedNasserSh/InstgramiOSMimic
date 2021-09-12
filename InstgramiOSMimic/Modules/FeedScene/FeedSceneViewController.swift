@@ -20,7 +20,6 @@ class FeedSceneViewController: UIViewController {
     
     func intiUI() {
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
-        
     }
 
 }
@@ -38,9 +37,8 @@ extension FeedSceneViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.configure(model: posts[indexPath.row])
         return cell!
     }
-    
-    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
-        self.interactor?.cancelDownload(index: indexPath?.row)
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.interactor?.cancelDownload(index: indexPath.row)
     }
 }
 
