@@ -6,17 +6,39 @@
 //
 
 import Foundation
+import UIKit
 struct FeedScenePresenter: FeedScenePresenterProtocol {
-    var view: FeedSceneViewProtocol?
     
-    func presnentFeed(posts: [FeedPost]?) {
-        guard let posts = posts else {return}
-        self.view?.setFeed(posts: posts)
+    var view: FeedSceneViewProtocol?
+    let downloadQueue = ImageDownloadQueue()
+    
+    func PresentFeed(posts: [FeedPost]?) {
+        guard let feedPosts = posts else {return}
+        self.view?.setFeed(posts: mapPosts(posts: feedPosts))
     }
     
-    func presnentError(error: NetworkError) {
+    
+    private func mapPosts(posts: [FeedPost]) -> [PostTableViewCellModel] {
+        return posts.map({ post in
+            var cellModel = PostTableViewCellModel()
+            let likeImage = post.liked ? PostTableViewCellModel.LikeImage.selected.rawValue : PostTableViewCellModel.LikeImage.unSelected.rawValue
+            cellModel.likeButtonImage = UIImage(named: likeImage)
+            let downloadOperation = PostImageDownloadOperation(url: post.imageURL, completion: cellModel.posImage)
+            downloadQueue.addOperation(operation: downloadOperation)
+            return cellModel
+        })
+    }
+    
+    func cancelDownload(index: Int) {
+        downloadQueue.cancelOperation(index: index)
+    }
+    
+    
+    func presentError(error: NetworkError) {
         self.view?.setError(error: error)
     }
+    
+    
     
     
 }

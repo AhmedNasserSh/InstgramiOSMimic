@@ -11,6 +11,7 @@ class FeedSceneViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var interactor: FeedSceneInteractorProtocol?
     var router: FeedSceneRouterProtocol?
+    private var posts = [PostTableViewCellModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,8 @@ class FeedSceneViewController: UIViewController {
     }
     
     func intiUI() {
-        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostTableViewCell")
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+        
     }
 
 }
@@ -28,19 +30,34 @@ extension FeedSceneViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as? PostTableViewCell
+        cell?.configure(model: posts[indexPath.row])
+        return cell!
     }
+}
+
+extension FeedSceneViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            self.interactor?.cancelDownload(index: indexPath.row)
+        }
+    }
+    
 }
 
 extension FeedSceneViewController: FeedSceneViewProtocol {
 
-    func setFeed(posts: [FeedPost]) {
-        
+    func setFeed(posts: [PostTableViewCellModel]) {
+        self.posts = posts
+        self.tableView.reloadData()
     }
     
     func setError(error: NetworkError) {

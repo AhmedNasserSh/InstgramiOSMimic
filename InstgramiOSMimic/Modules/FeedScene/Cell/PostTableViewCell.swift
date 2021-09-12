@@ -10,10 +10,15 @@ import UIKit
 class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
-
+    static let identifier = "PostTableViewCell"
     
-    func configure() {
-        
+    func configure(model: PostTableViewCellModel) {
+        var model = model
+        self.likeButton.setImage(model.likeButtonImage, for: .normal)
+        model.posImage = { [weak self] image in
+            guard let self = self else {return}
+            self.postImageView.image = image
+        }
     }
     
     @IBAction func didTabLike(_ sender: Any) {

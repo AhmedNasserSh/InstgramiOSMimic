@@ -10,7 +10,7 @@ protocol FeedSceneViewProtocol{
     var interactor: FeedSceneInteractorProtocol? { get }
     var router: FeedSceneRouterProtocol? { get }
     
-    func setFeed(posts: [FeedPost])
+    func setFeed(posts: [PostTableViewCellModel])
     func setError(error: NetworkError)
 }
 
@@ -19,14 +19,15 @@ protocol FeedSceneInteractorProtocol{
     var presenter: FeedScenePresenterProtocol? { get }
     
     func getFeedPosts()
-
+    func cancelDownload(index: Int)
 }
 
 protocol FeedScenePresenterProtocol{
     var view: FeedSceneViewProtocol? { get }
     
-    func presnentFeed(posts: [FeedPost]?)
-    func presnentError(error: NetworkError)
+    func PresentFeed(posts: [FeedPost]?)
+    func presentError(error: NetworkError)
+    func cancelDownload(index: Int)
 }
 
 protocol FeedSceneRouterProtocol{

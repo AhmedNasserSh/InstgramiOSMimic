@@ -22,10 +22,15 @@ extension FeedSceneInteractor {
             guard let self = self else {return}
             switch result {
             case .success(let feedPosts):
-                self.presenter?.presnentFeed(posts: feedPosts)
+                self.presenter?.PresentFeed(posts: feedPosts)
             case .failure(let error):
-                self.presenter?.presnentError(error: error)
+                self.presenter?.presentError(error: error)
             }
         })
     }
+    
+    func cancelDownload(index: Int) {
+        presenter?.cancelDownload(index: index)
+    }
+    
 }
