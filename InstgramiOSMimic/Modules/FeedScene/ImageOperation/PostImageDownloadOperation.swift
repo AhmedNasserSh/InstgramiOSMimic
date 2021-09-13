@@ -9,12 +9,11 @@ import Foundation
 import UIKit
 
 class PostImageDownloadOperation: Operation {
-    private let completion: (UIImage?) -> Void
-    private var imageDownloader: ImageDownloader
-    
-    init(url:URL, completion: @escaping (UIImage?) -> Void) {
-        self.completion = completion
-        self.imageDownloader = ImageDownloader(url: url)
+    var completion: (UIImage?) -> Void = {_ in}
+    private var url: URL
+
+    init(url:URL) {
+        self.url = url
     }
     
     override func main() {
@@ -22,19 +21,20 @@ class PostImageDownloadOperation: Operation {
             completion(nil)
             return
         }
-        imageDownloader.download { [weak self] result in
-            guard let self = self ,
-                  !self.isCancelled else {
-                self?.completion(nil)
-                return
-            }
-            switch result {
-            case .success(let image):
-                self.completion(image)
-            case .failure:
-                self.completion(nil)
-            }
+        
+        guard let imageData = try? Data(contentsOf: url) else { return }
+        
+        if isCancelled {
+          return
         }
+        
+        if !imageData.isEmpty {
+            completion(UIImage(data: imageData))
+        }else {
+            completion(nil)
+        }
+        
+      
     }
     
     

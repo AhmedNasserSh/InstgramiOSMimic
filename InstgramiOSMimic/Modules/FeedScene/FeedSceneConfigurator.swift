@@ -13,7 +13,8 @@ enum FeedSceneConfigurator {
         
         let viewController = FeedSceneViewController()
         let presenter = FeedScenePresenter(view: viewController)
-        let worker = FeedSceneWorker()
+        let worker = FeedSceneWorker(cachedService: FeedPostCacheService(storage: CoreDataStore()),
+                                     networkService:FeedServiceMock())
         let interactor = FeedSceneInteractor(worker: worker, presenter: presenter)
         
         viewController.interactor = interactor

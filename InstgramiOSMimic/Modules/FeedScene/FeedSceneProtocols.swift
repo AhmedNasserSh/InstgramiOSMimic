@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 protocol FeedSceneViewProtocol{
     var interactor: FeedSceneInteractorProtocol? { get }
     var router: FeedSceneRouterProtocol? { get }
     
     func setFeed(posts: [PostTableViewCellModel])
+    func updateFeed(at index: Int, image: UIImage?)
     func setError(error: NetworkError)
 }
 

@@ -7,9 +7,15 @@
 
 import Foundation
 class FeedSceneWorker: FeedSceneWorkerProtocol {
-    private lazy var cahceService = FeedPostCacheService(storage: CoreDataStore())
-    private lazy var networkService = FeedPostNetworkService(client: NetworkClient())
+    private let cacheService: FeedPostCacheServiceProtocol 
+    private let networkService: FeedPostNetworkServiceProtocol
 
+    init(cachedService: FeedPostCacheServiceProtocol,
+         networkService: FeedPostNetworkServiceProtocol){
+        self.networkService  = networkService
+        self.cacheService = cachedService
+    }
+    
     func getFeedPosts(type: DataSourceType, completion: @escaping (Result<[FeedPost]?, NetworkError>) -> Void) {
         switch type {
         case .cache:
@@ -20,7 +26,7 @@ class FeedSceneWorker: FeedSceneWorkerProtocol {
     }
 
     private func getCachedData(completion: @escaping (Result<[FeedPost]?, NetworkError>) -> Void) {
-        guard let cachedPosts = cahceService.fetch() else {
+        guard let cachedPosts = cacheService.fetch() else {
             completion(.failure(.noData))
             return
         }

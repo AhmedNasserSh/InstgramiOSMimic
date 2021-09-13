@@ -7,8 +7,12 @@
 
 import Foundation
 import CoreData
+protocol FeedPostCacheServiceProtocol {
+    func save(input: FeedPost)
+    func fetch() -> [FeedPost]?
+}
 
-struct FeedPostCacheService{
+struct FeedPostCacheService: FeedPostCacheServiceProtocol{
     private let storage: CoreDataStore
     init(storage: CoreDataStore) {
         self.storage = storage

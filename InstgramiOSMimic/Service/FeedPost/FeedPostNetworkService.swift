@@ -6,7 +6,11 @@
 //
 
 import Foundation
-class FeedPostNetworkService {
+protocol FeedPostNetworkServiceProtocol {
+    func getFeeds(completion: @escaping (Result<[FeedPost]?,NetworkError>) -> Void)
+}
+
+class FeedPostNetworkService: FeedPostNetworkServiceProtocol{
     private let client: NetworkClient
     
     init(client: NetworkClient) {

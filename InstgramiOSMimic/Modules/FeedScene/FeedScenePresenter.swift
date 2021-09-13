@@ -20,10 +20,19 @@ struct FeedScenePresenter: FeedScenePresenterProtocol {
     
     private func mapPosts(posts: [FeedPost]) -> [PostTableViewCellModel] {
         return posts.map({ post in
-            var cellModel = PostTableViewCellModel()
+            let cellModel = PostTableViewCellModel()
             let likeImage = post.liked ? PostTableViewCellModel.LikeImage.selected.rawValue : PostTableViewCellModel.LikeImage.unSelected.rawValue
             cellModel.likeButtonImage = UIImage(named: likeImage)
-            let downloadOperation = PostImageDownloadOperation(url: post.imageURL, completion: cellModel.posImage)
+            let downloadOperation = PostImageDownloadOperation(url: post.imageURL)
+
+            cellModel.completion = { image in
+                guard let index = downloadQueue.getOperation(operation: downloadOperation) else{return}
+                cellModel.posImage = image
+                DispatchQueue.main.async {
+                    view?.updateFeed(at: index, image: image)
+                }
+            }
+            downloadOperation.completion = cellModel.completion!
             downloadQueue.addOperation(operation: downloadOperation)
             return cellModel
         })

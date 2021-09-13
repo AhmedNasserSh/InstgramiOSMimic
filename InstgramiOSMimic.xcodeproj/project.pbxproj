@@ -16,6 +16,7 @@
 		4E51B56F26ED3EDF0063CB2A /* DataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B56E26ED3EDF0063CB2A /* DataSourceType.swift */; };
 		4E51B57126ED3F2E0063CB2A /* FeedPostNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B57026ED3F2E0063CB2A /* FeedPostNetworkService.swift */; };
 		4E51B57426ED44200063CB2A /* FeedSceneConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51B57326ED44200063CB2A /* FeedSceneConfigurator.swift */; };
+		4E596A3926EF3FE200ED09E7 /* FeedServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E596A3826EF3FE200ED09E7 /* FeedServiceMock.swift */; };
 		4EA3E0D326ECD603004B9CD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E0D226ECD603004B9CD6 /* AppDelegate.swift */; };
 		4EA3E0D526ECD603004B9CD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E0D426ECD603004B9CD6 /* SceneDelegate.swift */; };
 		4EA3E0DD26ECD603004B9CD6 /* InstgramiOSMimic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3E0DB26ECD603004B9CD6 /* InstgramiOSMimic.xcdatamodeld */; };
@@ -66,6 +67,7 @@
 		4E51B56E26ED3EDF0063CB2A /* DataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceType.swift; sourceTree = "<group>"; };
 		4E51B57026ED3F2E0063CB2A /* FeedPostNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostNetworkService.swift; sourceTree = "<group>"; };
 		4E51B57326ED44200063CB2A /* FeedSceneConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSceneConfigurator.swift; sourceTree = "<group>"; };
+		4E596A3826EF3FE200ED09E7 /* FeedServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceMock.swift; sourceTree = "<group>"; };
 		4EA3E0CF26ECD603004B9CD6 /* InstgramiOSMimic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstgramiOSMimic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA3E0D226ECD603004B9CD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA3E0D426ECD603004B9CD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				4EA3E11A26ECE419004B9CD6 /* FeedPostCacheService.swift */,
 				4E51B57026ED3F2E0063CB2A /* FeedPostNetworkService.swift */,
+				4E596A3826EF3FE200ED09E7 /* FeedServiceMock.swift */,
 			);
 			path = FeedPost;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				4EA3E11826ECE25F004B9CD6 /* Storage.swift in Sources */,
 				4E51B56F26ED3EDF0063CB2A /* DataSourceType.swift in Sources */,
 				4EA3E10926ECD7F2004B9CD6 /* Request.swift in Sources */,
+				4E596A3926EF3FE200ED09E7 /* FeedServiceMock.swift in Sources */,
 				4EA3E11B26ECE419004B9CD6 /* FeedPostCacheService.swift in Sources */,
 				4E189AB926EDE6A600637B08 /* ImageDownloadQueue.swift in Sources */,
 				4EA3E11026ECDE14004B9CD6 /* FeedPost.swift in Sources */,

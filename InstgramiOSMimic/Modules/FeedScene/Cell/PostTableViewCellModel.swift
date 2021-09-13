@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
-struct PostTableViewCellModel {
+class PostTableViewCellModel {
     var likeButtonImage: UIImage?
-    var posImage: ((UIImage?) -> Void) = {_ in}
-    
+    var posImage: UIImage?
+    var completion: ((UIImage?) -> Void)?
+
+
     enum LikeImage: String {
         case unSelected = "heart"
         case selected = "heart-selected"

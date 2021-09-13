@@ -10,6 +10,10 @@ class ImageDownloadQueue {
     private let operationQueue = OperationQueue()
     private var operations = [PostImageDownloadOperation]()
     
+    init() {
+        operationQueue.maxConcurrentOperationCount = 1
+    }
+    
     func addOperation(operation: PostImageDownloadOperation) {
         operationQueue.addOperation(operation)
         operations.append(operation)
@@ -19,6 +23,10 @@ class ImageDownloadQueue {
         guard  index < operations.count else{return}
         let operation = operations[index]
         operation.cancel()
+    }
+    
+    func getOperation(operation: PostImageDownloadOperation) -> Int? {
+        return operations.firstIndex(of: operation)
     }
     
     
